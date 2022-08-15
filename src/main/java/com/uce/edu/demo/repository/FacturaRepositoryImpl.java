@@ -43,16 +43,6 @@ public class FacturaRepositoryImpl implements IFacturaRepository{
 		this.entityManager.remove(f);
 	}
 	
-	
-	@Override
-	public List<Factura> consultarFecha(LocalDateTime fecha) {
-		//select * from factura where fact_fecha>'2022/08/04'
-		TypedQuery<Factura> myQuery=entityManager.createQuery(
-				"SELECT f FROM Factura f WHERE f.fecha> :datoFecha", 
-				Factura.class);
-		myQuery.setParameter("datoFecha", fecha);
-		return myQuery.getResultList();
-	}
 
 	
 	

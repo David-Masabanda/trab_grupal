@@ -13,9 +13,12 @@ public interface IFacturaService {
 	public void update(Factura f);
 	public void delete(Integer id);
 	
+	//Cree estos dos para calcular el precio y el numero de alimentos
 	public BigDecimal calcularPrecio(Integer id);
-	
 	public int cantidad(Integer id);
+	
+	
+	
 	
 	//Inner Join
 	public List<Factura> buscarFacturaInnerJoin(BigDecimal precio);

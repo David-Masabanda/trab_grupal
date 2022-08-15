@@ -42,6 +42,28 @@ public class HotelRepositoryImpl implements IHotelRepository {
 	}
 	
 	@Override
+	public void insertar(Hotel h) {
+		this.entityManager.persist(h);
+		
+	}
+
+	@Override
+	public Hotel buscar(Integer id) {
+		
+		return this.entityManager.find(Hotel.class, id);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
 	public List<Hotel> buscarHotelInnerJoin(String tipoHabitacion) {
 		TypedQuery<Hotel> myQuery=this.entityManager.createQuery(
 				"SELECT h FROM Hotel h JOIN h.habitaciones ha WHERE ha.tipo= :tipoHabitacion", 
@@ -116,17 +138,7 @@ public class HotelRepositoryImpl implements IHotelRepository {
 		return myQuery.getResultList();
 	}
 
-	@Override
-	public void insertar(Hotel h) {
-		this.entityManager.persist(h);
-		
-	}
 
-	@Override
-	public Hotel buscar(Integer id) {
-		
-		return this.entityManager.find(Hotel.class, id);
-	}
 
 
 

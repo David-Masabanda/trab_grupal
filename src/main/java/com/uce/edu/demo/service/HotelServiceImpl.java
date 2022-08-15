@@ -75,6 +75,10 @@ public class HotelServiceImpl implements IHotelService{
 		return this.hotelRepository.buscarHotel(tipo);
 	}
 
+	
+	
+	
+	// solo este 
 	@Override
 	public int contarHabitaciones(Integer id, String tipo) {
 		Hotel h=this.hotelRepository.buscar(id);
